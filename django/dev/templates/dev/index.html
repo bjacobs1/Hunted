@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang=en> 
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static "dev/index.css" %}" />
+    <link rel="stylesheet" 
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+    <!-- Include the jQuery library -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js">
+    </script>
+
+    <!-- Include the jQuery Mobile library -->
+    <script
+      src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+    </script>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1qMok8F_PLnJ8Wy_Vp0cXdARIA0udiq4&callback=huntedApp.initMap">
+    </script>
+
+    <script src="{% static "dev/index.js" %}">
+    </script>
+
+  </head>
+  <body>
+    <!-- Main view -->
+    <div data-role="page" id="main-page">
+      <div data-role="header">
+      </div>
+
+      <div data-role="main" class="ui-content">
+        <a href="/dev/login" class="ui-btn"> Log in </a>
+        <a href="/dev/message/all" class="ui-btn"> Messages </a>
+        <a href="/dev/map" class="ui-btn"> Map </a>
+        <a href="/dev/score" class="ui-btn"> Score </a>
+      </div>
+
+      <div data-role="footer">
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "dev/index-base.html" %}
+
+{% block page %}
+
+<div data-role="page" id="messages-page">
+  <div data-role="header" data-add-back-btn="true">
+    {{ message.sender }} | {{ message.subject }}
+  </div>
+
+  <div data-role="main" class="ui-content">
+    {{form}}    
+  </div>
+
+  <div data-role="footer" class="ui-content">
+    HUNTED - THE APP
+  </div>
+</div>
+
+{% endblock %}

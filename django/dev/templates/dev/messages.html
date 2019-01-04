@@ -1,0 +1,32 @@
+{% extends "dev/index-base.html" %}
+
+{% block page %}
+
+<div data-role="page" id="messages-page">
+  <div data-role="header" data-add-back-btn="true">
+    Messages
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <ul data-role="listview">
+      {% for message in message_list %}
+        <li>
+          <a href="">
+            {{message.sender}} | {{ message.subject }}
+          </a>
+        </li>
+      {% empty %}
+        <li>
+          No Messages.
+        </li>
+      {% endfor %}
+    </ul>
+    
+  </div>
+
+  <div data-role="footer" class="ui-content">
+    HUNTED - THE APP
+  </div>
+</div>
+
+{% endblock %}

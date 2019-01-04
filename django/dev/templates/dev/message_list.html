@@ -1,0 +1,38 @@
+{% extends "dev/index-base.html" %}
+
+{% block page %}
+
+<div data-role="page" id="messages-page">
+  <div data-role="header">
+    <a href="/dev/message/all" data-icon="back" data-role="button">Back</a>
+    <h1>Messages</h1>
+    <a href="/dev/logout" data-icon="delete" data-role="button">Logout</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    {% if message_list %}
+    <ul data-role="listview">
+
+      {% for message in message_list %}
+        <li>
+          <a href="{{ message.get_absolute_url }}">
+            {{ message.sender }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no messages.</p>
+    {% endif %}
+
+    <a href="/dev/message/new" data-icon="plus" data-role="button">New</a>
+    
+  </div>
+
+  <div data-role="footer" class="ui-content">
+    HUNTED - THE APP
+  </div>
+</div>
+
+{% endblock %}
